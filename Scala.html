@@ -1,0 +1,1170 @@
+ <?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr" > 
+
+  <head> 
+    <meta http-equiv="Content-Type" content="text/html+xhtml; charset=utf-8" />
+    <title>Présentation du langage Scala</title>
+
+    <!-- Make slides -->
+    <link rel="stylesheet" type="text/css" media="screen, projection, print"
+	  href="http://www.w3.org/Talks/Tools/Slidy/slidy.css" /> 
+    <script src="http://www.w3.org/Talks/Tools/Slidy/slidy.js.gz" charset="utf-8" type="text/javascript"></script> 
+
+    <!-- Colorize code -->
+    <!-- core  -->
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript" ></script> 
+    <!-- Include painting languages -->
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushJava.js" type="text/javascript" ></script> 
+    <!-- <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushScala.js" type="text/javascript" ></script>  -->
+    <script src="shBrushScalaInteractive.js" type="text/javascript" ></script> 
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushBash.js" type="text/javascript" ></script> 
+    <script src="shBrushInteractiveShell.js" type="text/javascript" ></script> 
+
+    <!-- Include *at least* the core style and default theme -->  
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript"> SyntaxHighlighter.all();   </script>
+
+    <!-- Mes styles -->
+    <link rel="stylesheet" href="scala.css" type="text/css" media="screen, print, projection" />
+
+    <meta name="copyright" content="Copyright &#169; 2010 Capgemini" /> 
+
+  </head>
+  
+
+  <body>
+    <div class="background"> 
+      <img src="capgemin_little.png" alt="logo" width="300px" />
+    </div> 
+
+    <!-- Page de garde -->
+    <div class="slide cover" >
+      <h1>Le langage Scala</h1>
+      <div class="vbox">
+	<div class="hbox">
+	  <br/> <!-- pour permettre au texte de rester dans le cadre ... -->
+	  <font size="+4" >http://www.scala-lang.org/</font>
+	    <img src="scala_logo.png" alt="logo scala"/>
+	</div>
+      </div>
+    </div>
+
+    <div class="slide" >
+      <h1>Hello world</h1>
+      <div class="float">
+	<p >
+	  Le code
+	  <Script Type="Syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+object HelloWorld {
+  def main(args: Array[String]) {
+    println("Hello, world!")
+  }
+}
+]]>
+	  </script>
+	  
+	  Execution par compilation
+	  <script type="syntaxhighlighter" class="brush: interactivebash; ">
+	    <![CDATA[
+bash $ scalac HelloWorld.scala
+bash $ scala HelloWorld
+Hello, world!
+bash $ 
+]]>
+	  </script>
+	</p>
+      </div>
+      <div class="float">
+	<p>
+	  Interprétation interactive
+	  <script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[
+bash $ scala
+  This is a Scala shell.
+...
+scala> :load HelloWorld.scala
+Loading HelloWorld.scala...
+defined module HelloWorld
+
+scala> HelloWorld.main(null)
+Hello, world!
+
+scala> :q
+]]>
+	  </script>
+	</p>
+      </div>
+<!-- 	Commentaire -->
+
+<!-- On y voit l'usage de object ... qu'on revera plus tard. Pour faire simple, il n'y a pas de static en Scala -->
+<!-- => On prend un instance unique (singleton) et on appel une méthode de cette objet. -->
+
+<!-- passage des arguments args: Array[String] -->
+<!-- notation des classes générique avec les [] -->
+<!-- Pas de ; ! c'est scala qui détecte proprement la fin de l'expression -->
+<!-- scalac, javac ... très ressemblant, jusqu'au paramètre. -->
+
+    </div>
+
+    <div class="slide">
+      <h1><a href="http://www.scala-lang.org/node/1658">Scala en entreprise</a></h1>
+      <ul>
+	<li>L'utilisation de Scala par <a href="http://press.linkedin.com/about">LinkedIn</a>
+	est décrite au travers de la plateforme Norbert : 
+	<a href="http://days2010.scala-lang.org/node/138/159">Distributed Computing with Norbert</a> </li>
+	
+	<li><a href="http://www.scala-lang.org/node/2200"> EDT Trading</a> a remplacer 300,000 lignes de code Java
+	en Scala (Alex McGuire).</li>
+
+	<li>Alex Payne, responsable de l'API de <a href="www.twitter.com">Twitter</a> a
+	présenté <a href="http://www.slideshare.net/al3x/why-scala-for-web-20">la raison de l'usage de
+	Scala</a> et <a href="http://www.artima.com/scalazine/articles/twitter_on_scala.html">son usage de scala à Twitter</a>.</li>
+
+	<li><a href="http://www.novell.com/home/">Novell</a> a
+	annoncé <a href="http://www.novell.com/products/vibe-cloud/">Pulse</a>, une plateforme pour
+	réaliser du cloudcomputing.</li>
+
+	<li>Graham Tackley
+	du <a href="http://guardian.co.uk">Guardians</a> <a href="http://www.slideshare.net/tackers/java-to-scala">explique</a>
+	comment il a réduit par 20 le temps d'indexation en passant de Java à Scala </li>
+
+	<li> <a href="http://www.xebia.com/">Xebia </a> <a href="http://www.scala-lang.org/node/2766">Xerox</a> <a href="http://foursquare.com/help/">FourSquare</a>
+	Siemens, GridGain ... </li>
+      </ul>
+
+<!-- Commentaire -->
+
+<!-- LinkIn :  -->
+<!--  Recherche de personne c'est 15 Millions de requête par jour, 250 requêtes/s en pic, 100 paramètres. La recherche est réparot Scatter -->
+<!--  Social Graph : 65M noeuds, 680M arcs, 250M requêtes/j -->
+<!--  Norbert : ZooKeeper + Jetty => notif on cliuster, routing, load balancing, scatter/gather api -->
+<!-- why scala :  -->
+<!--   - Multithreaded,  asynchronous coding is hard => scala Actors resolves -->
+<!--   - Code reuse with traits -->
+<!--   - + Mixins -->
+<!--   - Dependency Injection and the Cake Pattern -->
+<!-- http://sna-projects.com -->
+<!-- http://github.com/rhavyn/norbert -->
+
+<!-- EDT Trading: -->
+
+<!--  Scala a été utilisé pour sa capacité DSL : les algorithmes de calcul de cout sont écrit dans un langage -->
+<!--  algorithmique compréhensible par la MOA : -->
+<!-- :VOLUME = 1063000 MWH; -->
+<!-- :STRIKE = 20.05 EUR/MWH; -->
+<!-- :PREMIUM = 3.73 EUR/MWH; -->
+<!-- :F = AVE(:M =JAN09..DEC10; -->
+<!--                 AVE(FUEL_OIL_1PCT_FOB_ARA_CARGOS, :M) * -->
+<!--                 AVE(1/ECB_USD_EUR, :M) -->
+<!--         ); -->
+<!-- ... -->
+
+    </div>
+
+    <div class="slide">
+      <h1>Présentation</h1>
+    	<ul>
+    	  <li>Scala est un langage général avec une volonté de concision (2 fois moins de code que du
+    	  java), d'élégance et type-safe.</li>
+    	  <li>Il intègre naturellement les fonctionnalités orientée objet et fonctionnelles.</li>
+	  <li>La volonté de Scala est de tourner dans une JVM. Les performances des JVM sont telles que le bytecode est aussi rapide que du code natif.</li>
+	  <li>Scala est typé statiquement à la différence des langages typés dynamiquement comme python, ruby ou
+	  javascript. Cela permet de meilleurs performances.</li>
+	  <li>Scala génère du byte code java et du CRL pour du C#</li>
+	  <li>Scala est défini pour être scalable, distribué : selftype, membre abstrait, classe imbriquée,
+	  mixin avec les traits.</li>
+    	</ul>
+	<div class="float">
+	  En java
+     	<script type="syntaxhighlighter" class="brush: java; ">
+<![CDATA[ 
+class PrintOptions {
+  public static void main(String[] args) {
+    System.out.println("Options selected:");
+    for (int i = 0; i < args.length; i++)
+      if (args[i].startsWith("-"))
+        System.out.println(" "+
+	     args[i].substring(1));
+  }
+}
+]]>
+	</script>
+	</div>
+	<div class="float">
+	  En Scala
+<script type="syntaxhighlighter" class="brush: java; ">
+<![CDATA[ 
+object PrintOptions {
+  def main(args: Array[String]): unit = {
+    System.out.println("Options selected:")
+    for (val arg <- args)
+      if (arg.startsWith("-"))
+	System.out.println(" "+
+                          arg.substring(1))
+  }
+}
+]]>
+	</script>
+	</div>
+<!-- Commentaire -->
+
+
+<!-- Noter l'usage des package/classes java System.out -->
+<!-- Noter l'usage de la boucle for, un peu différente -->
+<!-- Unit remplace void -->
+<!-- object designe un singleton -->
+    </div>
+
+    <div class="slide">
+      <h1>Basique</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[
+scala> 1
+res0: Int = 1
+scala> 12+3
+res2: Int = 15
+scala> 12.9 * 34
+res3: Double = 438.6
+scala> "Hello"
+res5: java.lang.String = Hello
+scala> "Hello " + "world"
+res7: java.lang.String = Hello world
+scala> 1 // commentaire
+res8: Int = 1
+scala> 1 /* commentaire */
+res9: Int = 1
+scala> true
+res12: Boolean = true
+scala> 
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<p>Types de base</p>
+	<ul>
+	  <li class="short">Byte : Entier 8 bit signé</li>
+	  <li class="short">Short : Entier 16 bits signé</li>
+	  <li class="short">Int : Entier 32 bits signé</li>
+	  <li class="short">Long : Entier 64 bits signé</li>
+	  <li class="short">Float : Flottant 32 bits en précision simple</li>
+	  <li class="short">Double : Flottant 64 bits en précision double</li>
+	  <li class="short">Char : Caractère unicode 16 bits non signé</li>
+	  <li class="short">String : Chaine unicode</li>
+	  <li class="short">Boolean : true/false</li>
+	</ul>
+      </div>
+    </div>
+
+<div class="slide">
+      <h1>Basique : variables</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[
+scala> var un = 1
+un: Int = 1
+scala> un *4
+res4: Int = 4
+scala> val deux=2
+deux: Int = 2
+scala> deux = 4
+<console>:6: error: reassignment to val
+       deux = 4
+            ^
+scala> un = "1"
+<console>:6: error: type mismatch;
+ found   : java.lang.String("1")
+ required: Int
+       un = "1"
+            ^
+scala> un = 2
+un: Int = 2
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li><span class="em">Var</span> permet de définir une variable modifiable </li>
+	  <li><span class="em">Val</span> permet de définir une variable non modifiable (const)</li>
+	  <li>
+	    Les opérateurs sont disponibles &gt; &lt; == != &gt;= &gt;&gt;
+	</li>
+	<li>
+	  Ils sont utilisables en ligne
+	  <script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[
+scala> val i = if (4==5) 4 else 5
+i: Int = 5
+
+scala> val isBook = 6>=3; val price=16; 
+scala> val vol=10
+scala> val sale=if (((isBook)&&(price>5))
+  ||(vol>30))price*vol else price/vol
+     | sale: Int = 160
+
+]]>
+	  </script>
+	</li>
+	</ul>
+      </div>
+
+    </div>
+
+    <div class="slide">
+      <h1>Les boucles</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[
+scala> var total=1
+scala> while(total < 17) total+=3
+scala> total
+res4: Int = 19
+scala> var total=1
+scala> do{ total+=3 } while (total < 17)
+scala> total
+res10: Int = 19
+scala> for(i <- 1 to 4) print(i + " ")
+1 2 3 4 
+scala> for(i <- 1 until 2 ; j <- 1 to 3) 
+   println("(" + i + ", " + j + ")")
+(1, 1)
+(1, 2)
+(1, 3)
+scala> for(c<-"hello")print(" " + c)
+ h e l l o
+]]>
+	  </script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Le <span class="em">while</span> est standard : <span class="em">while (cond) block/exp</span></li>
+	  <li>Le <span class="em">for</span> suit le pattern des générators : <span class="em">for (range) block/exp</span>. Range est une
+	  collection, un tableau ...</li>
+	  <li>Noter la notation des boucles à plusieurs compteurs !</li>
+	  <li>noter qu'une chaine est vue comme un tablea de caractère... </li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Conversion</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+// Hexadecimal
+scala> 0x23
+res22: Int = 35
+// Octal
+scala> 023
+res24: Int = 19
+// Float ou double
+scala> val i = 1.34e4
+i: Double = 13400.0
+scala> val i = 1.34e4F
+i: Float = 13400.0
+]]>
+	  </script>
+      </div>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+// Unicode
+scala> val c = "A"
+c: java.lang.String = A
+scala> val c = "\101"
+c: java.lang.String = A
+scala> val c = "\u0041"
+c: java.lang.String = A
+// Multi-lignes
+scala> val s = """ Coucou
+     | c'est le bonheur les multi lignes"""
+s: java.lang.String = 
+ Coucou
+c'est le bonheur les multi lignes
+]]>
+	  </script>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les tableaux associatifs</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+/** Maps are easy to use in Scala. */
+val colors = Map("red" -> 0xFF0000,
+                 "turquoise" -> 0x00FFFF,
+                 "black" -> 0xFFFFFF,
+                 "orange" -> 0xFF8040,
+                 "brown" -> 0x804000)
+... scala.collection.immutable.Map[java.lang.String,Int]
+
+	  ]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Le type <span class="em">Map</span> permet de constuire le tableau.</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+    <h1>Les fonctions</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+// Simple
+scala> def max(x: Int, y: Int): Int = {
+  if (x > y) x
+  else y
+}
+scala> max(4, 6)
+res26: Int = 6
+
+// Récursive
+scala> def gcd(x: Long, y: Long): Long =
+  if (y == 0) x else gcd(y, x % y)
+scala> gcd(3,12)
+res28: Long = 3
+
+]]>
+	  </script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Un paramètre est défini <span class="em">id : type = defaultValue</span>.</li>
+	  <li>Le type de retour est précisé en fin de définition méthode.</li>
+	</ul>
+      </div>
+    </div>  
+    
+    <div class="slide">
+      <h1>Les classes</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+scala> class Point {
+ private var defaultWith_ : String = _
+ var aString : String = ""
+ var abstractString : String 
+ var aString = "init"
+}
+defined class Point
+
+// Declaration d'attribut implicit
+scala> class Segment(var start: Point,
+                     var end: Point)
+defined class Segment
+scala> var s=new Segment(new Point(1,2), 
+                         new Point(4,5))
+s: Segment = Segment@22b104
+scala> s.start
+res67: Point = Point(1,2)
+ ]]>
+	</script>
+      </div>
+     <div class="float">
+       <ul>
+	 <li><span class="em">defaultWith_</span> est une String initialisée par "" (0 pour un entier ...)</li>
+	 <li class="short"><span class="em">aString</span> est une String initialisée par ""</li>
+	 <li ><span class="em">abstractSring</span> est une String non initialisée => ! attribut abstrait ! la classe doit être abstraite</li>
+	 <li><span class="em">aString</span> : manière la plus concise et courante de désigner un attribut.</li>
+	 <li>L'affichage d'une variable est du style [class]@[referenceId].</li>
+	 <li>Scala définit automatiquement les getter et setter (nom != !): 
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+  def aString: Int = aString
+  def aString= (newVal:String):Unit 
+ ]]>
+	</script>
+	 </li>
+	 <li>Harrch, trop fort avec un ligne de type constructeur, une classe (bean like) est déclarée et utilisable !</li>
+       </ul>
+     </div>
+    </div>
+
+    <div class="slide">
+      <h1>les classes (2) </h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+scala> class Point(ix:Int = 2,iy:Int = 4) {
+var x = ix
+var y = iy
+def + (p: Point): Point={ 
+  new Point(x + p.x, y + p.y)
+  }
+override def toString = "Point("+x+", "+y+")"
+}
+defined class Point
+
+scala> Point(3,4) + Point(2,1)
+res77: Point = Point(5,5)
+
+scala> object Calc {
+  def square(x:Int) = x * x
+}
+scala> Calc.square(2) 
+ ]]>
+	</script>
+      </div>
+     <div class="float">
+       <ul>
+	 <li>La redéfinition d'une méthode impose l'usage obligatoire du <span class="em">override</span>. </li>
+	 <li><span class="em">toString</span> permet d'avoir un affichage plus sexy (comme java).</li>
+	 <li>Une méthode peut être un symbole (+, :: ...)</li>
+	 <li>Les valeurs par défaut sont possibles.</li>
+	 <li>L'usage des opérateurs qui permet d'écrire <span class="em"> x + y </span>, comme nom de méthode simplifie
+	 le travail de définition des DSL Domaine Specific Language.</li>
+	 <li>Un <span class="em">object</span> suit le pattern singleton. C'est comme une classe car on peut y définir
+	 une structure, mais elle ne s'instancie pas, elle est utilisable directement </li>
+       </ul>
+     </div>
+    </div>
+    
+    <div class="slide">
+      <h1>les ... cas de ... classes</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+scala> case class Point(x:Int,y:Int){
+  def +(pt:Point)=Point(x+pt.x,y+pt.y)
+  def -(pt:Point)=Point(x-pt.x,y-pt.y)
+  override def toString="Point("+x+","+y+")"
+}
+scala> val p=Point(1,2)
+p: Point = Point(1,2)
+scala> p.x
+res44: Int = 1
+scala> p.y
+res45: Int = 2
+
+scala> Point(Point(4,5)-Point(5,5) x, 5)
+res82: Po = Po(-1,5)
+ ]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Hein, qu'est ce que ce que ce truc !!. </li>
+	  <li>Comment scala connait les attributs <span class="em">x</span> et
+	  <span class="em">y</span> ? Les paramètres du constructeurs définissent les attributs avec le mot clé<span class="em">case</span></li>
+	  <li>Pourquoi pas de <span class="em">new</span> ? Le mot clé <span class="em">case</span> déclare automatique une méthode factory <span class="em">Point</span>, ainsi le new n'est plus indispensable.</li> 
+	  <li>Pourquoi pas d'accolade ? Pas de type de retour ? Grâce à son moteur d'inférence de type (cf + loin), Scala déduit ce qui n'est pas explicite.</li>
+	  <li>Ça c'est de la concision ;)</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les Listes</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+scala> List(1,2) :: 3
+<console>:6: error: value :: is not a member of Int
+scala> 3 :: List(1,2)
+res13: List[Int] = List(3, 1, 2)
+scala> List(1,2) ::: List(3)
+res15: List[Int] = List(1, 2, 3)
+
+List.forall ( p: A => Boolean ) 
+List.foreach( f: A => U ) 
+List.filter ( p: A => Boolean ) 
+...
+
+	  ]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Opérateur de rajout en début (cons) <span class="em">::</span> (= lisp)</li>
+	  <li>Pas de <span class="em">append</span> !!</li>
+	  <li><span class="em">forall</span> applique <span class="em">p(0)</span> ET <span class="em">p(1)</span> ... <span class="em">p(N)</span>.</li>
+	  <li><span class="em">foreach</span> applique predicat <span class="em">p</span> sur chaque élément.</li>
+	  <li><span class="em">filter</span> retourne une list ou le predicat <span class="em">p</span> est vrai</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les tuples</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+scala> val aTuple = (1, "deux", 
+                     ((v:Int) => v%2==0))
+aTuple: (Int, java.lang.String, 
+   (Int) => Boolean) = (1,deux,<function1>)
+scala> aTuple._1
+res4: Int = 1
+scala> aTuple._3(3)
+res3: Boolean = false
+
+scala> val (entier, str, cb) = aTuple
+entier: Int = 1
+str: java.lang.String = deux
+cb: (Int) => Boolean = <function1>
+
+scala> val un, deux = (1,"deux")
+un: (Int, java.lang.String) = (1,deux)
+deux: (Int, java.lang.String) = (1,deux)
+	  ]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Un <span class="em">tuple</span> est une collection d'élément différents.</li>
+	  <li>L'accès à l'item <span class="em">i</span> est réalisé par <span class="em">_i</span>.</li>
+	  <li>L'extraction d'un <span class="em">tuple</span> est possible par l'opérateur d'affectation.</li>
+	  <li>Attention de ne pas oublier les parenthèse pour l'extraction d'un tuple.</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Switch match</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+scala> def decode(n:String) {
+  println(n match {
+    case "1" => "One"
+    case "2" => 2*2
+    case "5" => "Five"
+    case _ => "Error"
+  })
+}
+decode: (n: String)Unit
+scala> decode(2)
+4
+ ]]>
+	</script>
+
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Trop de la balle ce match !</li>
+	  <li>Le symbole <span class="em">_</span> représente le cas par défaut.</li>
+	  <li>Bien sûr marche pour un entier</li>
+	  <li><span class="em">Unit</span> indique le type fonction. (équivalent au void)</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Switch match ... </h1>
+
+	<ul><li>Ça marche même sur des <span class="em">types</span> ... des classes par exemples!</li></ul>
+
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+abstract class TreeN
+case class InterN(key:String,left:TreeN,right:TreeN) extends TreeN
+case class LeafN(key:String,value:Int) extends TreeN
+
+def find(t:TreeN,key:String):Int={
+  t match {
+    case InterN(k,l,r) => find((if(k>=key)l else r),key)
+    case LeafN(k,v) => if(k==key) v else 0
+  }
+}
+	  ]]>
+	</script>
+
+    </div>
+
+    <div class="slide">
+      <h1>L'inférence de type </h1>
+      <p>
+	Scala est un langage statiquement typé, toutes les variables et les fonctions ont des types qui
+	sont totalement définis au moment de la compilation.
+      </p>
+      <p>Cependant, Scala est capable de déterminer le type d'une variable à partir de la façon dont on l'utilise.</p>
+      <p>Lorsque Scala parse <span class="em">val x = 3</span>, il infère le type <span class="em">Int</span> pour <span class="em">x</span> : La
+      notation non inférée est <span class="em">val x: Int = 3</span>.
+      </p>
+      <p> Généralement les types sont codé pour les paramètres des fonctions. Par contre le type de retour
+      est souvent inféré.
+      </p>
+    </div>
+    
+    <div class="slide">
+    <h1>Les fonctions sont des objets</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+scala> val lst = List(1, 2, 4, 6, 9 )
+lst: List[Int] = List(1, 2, 4, 6, 9)
+scala> def isodd(i: Int) = i%2 == 1
+isodd: (i: Int)Boolean
+
+scala> def filter(inLst:List[Int],
+                  cond:(Int)=>Boolean) :
+  List[Int]={
+    if(inLst==Nil) Nil
+    else if(cond(inLst.head))
+      inLst.head::filter(inLst.tail,cond)
+    else filter(inLst.tail,cond)
+}
+
+scala> filter(lst, isodd)
+res57: List[Int] = List(1, 9)
+
+ ]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Noter l'usage des méthodes <span class="em">head</span>, <span class="em">tail</span> et <span class="em">::</span> de <span class="em">List</span></li>
+	  <li>noter le passage de la méthode en paramètre dans la variable <span class="em">cond</span></li>
+	  <li>Pour les habitués aux c++ et la stl, c'est l'usage des predicats et <span class="em">unary_function</span></li>
+	  <li> ... ceci dit, peut on se passer de <span class="em">isodd</span> ?</li>
+	  <li> yes par les fonctions anonymes 
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+filter(lst, (v:Int) => v%2==0)
+ ]]>
+	</script>
+	  </li>
+	  <li><span class="em">(v:Int) => v%2==0)</span> est une fonction prenant en paramètre un entier et retournant un Boolean.</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les fonctions sont des objets (2)</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+def exists[T](xs: Array[T], 
+              p: T => boolean) = {
+  var i: int = 0
+  while (i < xs.length && !p(xs(i))) 
+    i = i + 1
+  i < xs.length
+}
+
+def forall[T](xs: Array[T], 
+              p: T => boolean) = {
+  def not_p(x: T) = !p(x)
+  !exists(xs, not_p)
+}
+
+def forall[T](xs: Array[T], 
+              p: T => boolean) =
+  !exists(xs, (x: T) => !p(x))
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li><span class="em">exists</span> compte le nombre de fois ou le predicat <span class="em">p</span>
+	  est faux.</li>
+
+	  <li><span class="em">forall</span> est une méthode retournant un boolean applicant le predicat sur l'ensemble de la collection</li>
+
+	  <li>Le paramètre <span class="em">p</span> est une fonction prenant un paramètre de type <span class="em">T</span> et
+	  retournant un <span class="em">boolean</span>.</li>
+
+	  <li>Les fonctions qui prennent des fonctions en paramètre sont dites <span class="em">higher-order functions</span>. </li>
+
+	  <li><span class="em">forall</span> utilise une défition de fonction imbriquée
+
+	  <ul>
+	    <li>Une méthode imbriquée accède aux paramètres et variables locales.</li>
+	    <li>... La définiton de <span class="em">not_p</span> pourrait être changé en fonction anonyme.</li>
+	  </ul>
+	  </li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>La facilité de lecture de code</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+def hasZeroRow(matrix: Array[Array[int]]) =
+   exists(matrix, (row: Array[int]) => forall(row, 0 ==))
+
+// equivalent à 
+def hasZeroRow(matrix: Array[Array[int]]) =
+  matrix exists (row => row forall (0 ==))
+ ]]>
+	</script>
+      </div>
+    </div>
+
+
+    <div class="slide">
+      <h1>Les séquences</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+def sqrts(xs: List[double]): List[double] =
+  xs filter (0 <=) map Math.sqrt
+
+// PLus lisible
+def sqrts(xs: List[double]): List[double] =
+  for (val x <- xs; 0 <= x) yield Math.sqrt(x)
+	  ]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Une séquence est un tableau, une liste, un stream, un itérateur. Tous les types qui hérite de <span class="em">scala.Seq</span></li>
+	  <li>Note that Math.sqrt comes from a Java class</li>
+	  <li>La fonction <span class="em">filter</span> retourne l'item si le prédicat <span class="em">(0 <=)</span> (sic!) est vrai.</li>
+	  <li><span class="em"> val x &lt;- xs</span> est un générateur qui produit une séquence</li>
+	  <li><span>0 &lt;= x</span> est un filtre, qui élimine des valeurs</li>
+	  <li>Tout ceci génère une séquence à partir de ce qui est généré après le <span class="em">yield</span>.</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>L'abstraction</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+// Une classe abstraite
+class GenCell[T](init: T) {
+  private var value: T = init
+  def get: T = value
+  def set(x: T): unit = { value = x }
+}	   
+
+// Une fonction abstraite
+def swap[T](x: GenCell[T], y: GenCell[T]): unit = {
+val t = x.get; x.set(y.get); y.set(t)
+
+// Usage explicite
+val x: GenCell[int] = new GenCell[int](1)
+val y: GenCell[int] = new GenCell[int](2)
+swap[int](x, y)
+
+// Inférence de type
+val x = new GenCell(1)
+val y = new GenCell(2)
+swap(x, y)
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>membre abstrait : la virtualisation.</li>
+	  <li>paramètre abstrait : les templates</li>
+	  <li><span class="em">GenCell</span> est une classe abstraite, dite générique </li>
+	  <li><span class="em">swap</span> est une fonction abstraite</li>
+	  <li>Merci l'inférence de type ... ça allège l'écriture ;)</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les classes abstraites</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+class aClasse [T] {...}
+
+class aClassConstraitSuper  [T :> List] {...}
+class aClasssConstraitUnder [T <: List] {...}
+
+class Klass(x:Int) {
+  var x = x
+  // Autre constructeur
+  def this() = this (0) 
+}
+
+class theKlass (x:Int, y:Int) {
+  var xx = x
+  var yy = y
+}
+	  ]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul >
+	  <li>La classe à fournir à <span class="em">aClasse</span> n'a pas de contrainte</li>
+	  <li>La classe à fournir à <span class="em">aClassConstraitSuper</span> doit être parente de <span class="em">List</span></li>
+	  <li>La classe à fournir à <span class="em">aClasssConstraitUnder</span> doit être une sousclasse de <span class="em">List</span> </li>
+	  <li>La classe <span class="em">KClass</span> défini secondaire qui doit appeler le construteur primaire ... ou un autre</li>
+	  <li>Les attributs <span class="em">x</span> et <span class="em">y</span>
+	  de <span class="em">theKlass</span> sont accessibles et non ceux de <span class="em">Klass</span></li>
+	</ul>
+      </div>
+    </div>
+
+
+    <div class="slide">
+      <h1>Les traits ... le comportement</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+trait Ordered[T] {
+  def < (x: T): boolean
+}
+
+def updateMax[T <: Ordered[T]]
+               (c: GenCell[T], x: T) =
+ if (c.get < x) c.set(x)
+
+abstract class GenList[+T] {
+  def isEmpty: boolean
+  def head: T
+  def tail: GenList[T]
+}
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>La notion de <span class="em">trait</span> est à peu près l'équivalent de l'interface en
+	  java. Différence : pas de paramètre au constructeur.</li>
+	  <li>Un <span class="em">trait</span> peut posséder des attributs, des méthodes non abstraites</li>
+	  <li>Les fonctions abstraites peuvent restreindre leur usage à des sous types d'un <span class="em">trait</span>, telle que <span class="em">Ordered</span></li>
+	  <li><span class="em">updateMax</span> peut être défini en utilisant le <strong>comportement</strong> <span class="em">Ordered</span> </li>
+	  <li>
+	    Variance : si <span class="em">S</span> est un sous-type de <span class="em">T</span>, si la
+	    méthode <span class="em">M</span> est valable pour <span class="em">S</span>
+	    et <span class="em">T</span>, elle est dite covariante.
+	    <ul>
+	      <li><span class="em">[+T]</span> indique un constructeur covariant.</li>
+	      <li><span class="em">[-T]</span> indique un constructeur contravariant.</li>	      
+	      <li><span class="em">[T]</span> indique un constructeur non-variant.</li>	      
+	    </ul>
+	  </li>
+	  <li>... a aprofondir ...</li>
+	</ul>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <h1>Les traits (2) en tant que décorateur</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+trait Action { def action() : Unit }
+class TestAction extends Action {
+  def action() = {println("TestAction")} 
+}
+
+trait LoggedAction extends Action {
+  abstract override def action () = {
+    println("Before action")
+    super.action()
+    println("After action")
+  }
+}
+trait LoggedAction extends Action {
+  abstract override def action () = {
+    println("Before action")
+    super.action()
+    println("After action")
+  }
+}
+]>
+	</script>
+      </div>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+object Test {
+  def main(args: Array[String]):Unit = {
+    val a = new TestAction() 
+             with LoggedAction
+    a action
+  }  
+}
+scala> Test.main(null)
+Before action
+TestAction
+After action
+]>
+	</script>
+	<ul>
+	  <li>Ceci permet d'affecter des comportements à l'instanciation.</li>
+	  <li>Il est possible d'avoir plusieurs <span class="em">with</span> pour injecter plusieurs comportement. L'ordre est alors important.</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les traits (3)</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+trait Ordered[A] {
+  def compare(that: A): Int
+
+  def < (t:A):Boolean=(this compare t)<  0
+  def > (t:A):Boolean=(this compare t)>  0
+  def <=(t:A):Boolean=(this compare t)<= 0
+  def >=(t:A):Boolean=(this compare t)>= 0
+  def compareTo(t: A): Int = compare(t)
+}
+case class Person(val name:String) 
+              extends Ordered[Person] {
+  def compare(that: Person) : Int = 
+        this.name compare that.name
+}
+scala> Person("same") compare Person("same")
+res84: Int = 0
+scala> Person("same") compare Person("not same")
+res85: Int = 5
+scala> Person("same") < Person("not same")
+res86: Boolean = false
+
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li><span class="em">Ordered</span> définit des méthodes qui utilise la méthode abstraite compare.</li>
+	  <li>Il suffit à la classe <span class="em">Person</span> de définir la
+	  méthode <span class="em">compare</span> pour profiter des autres méthodes
+	  de <span class="em">Ordered</span></li>
+	</ul>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <h1>Attribut abstrait</h1>
+      <div class="float">
+     	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+abstract class AbsCell {
+  type T
+  val init: T
+  private var value: T = init
+  def get: T = value
+  def set(x: T): Unit = { value = x }
+}
+
+val aCell = new AbsCell { type T = int; val init = 1 }
+aCell.set(cell.get * 2)
+
+def reset(c: AbsCell): unit = c.set(c.init)
+]]>
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li><span class="em">AbsCell</span> défini un type T, un attribut <span class="em">init</span> sans
+	  initalisation donc abstrait et <span class="em">value</span> un membre avec ses attribut</li>
+
+	  <li><span class="em">aCell</span> précisie le type pour <span class="em">int</span> lors de sont
+	  instanciation, et initialise l'attribut immuable <span class="em">init</span>.</li>
+
+	  <li>La fonction<span class="em">reset</span> est capable d'utiliser <span class="em">AbsCell</span>
+	  sans pour autant connaitre <span class="em">T</span></li>
+
+	  <li> <span class="em">c.init</span> est du
+	  type <span class="em">c.T</span>. <span class="em">c.T</span> est appelé
+	  un <span class="em">Path-dependent types</span>, nouveau concept apporté par Scala.</li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Les acteurs</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+
+]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li></li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>XML Processing</h1>
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+<![CDATA[ 
+scala> val poly = false
+scala> var poeme=<poeme prenom="Charles" 
+                        name="Baudelaire">
+<strophe>
+ <vers>Je fais souvent le rêve étrange ...
+ </vers>
+ <vers>{if( poly ) 
+     "N femmes" else "D'une femme" } 
+     que j'aime et  ...</vers>
+</strophe></poeme>
+poeme: scala.xml.Elem = ...
+scala> poeme \ "@prenom"
+res26: scala.xml.NodeSeq = Charles
+scala> poeme \\ "vers" foreach println
+<vers>Je fais souvent le rêve étrange</vers>
+<vers>D'une femme que j'aime et ...</vers>
+]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>XML est à ce point utilisé, qu'il est quasi natif dans Scala.</li>
+	  <li>Il est possible de parcourir le contenu directement dans le langage.
+	  <ul>
+	    <li><span class="em">\</span> atteint <span class="em">child</span></li>
+	    <li><span class="em">\\</span> atteint <span class="em">self-or-descendant</span></li>
+	  </ul>
+	  </li>
+	  <li>L'insertion de code scala est possible entre les accolades</li>
+	  <li>Le matching avec les schéma DTD, xsd ou relanxng n'est pas disponible</li>
+	  <li></li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>Implicit parameters</h1>
+      TODO
+      <div class="float">
+	<script type="syntaxhighlighter" class="brush: scala; ">
+	  <![CDATA[ 
+implicit def listToSet[T](xs: GenList[T]): Set[T] =
+  new Set[T] {
+    def include(x: T): Set[T] = xs prepend x
+    def contains(x: T): boolean =
+      !isEmpty && (xs.head == x ||
+                   (xs.tail contains x))
+}	  ]]> 
+	</script>
+      </div>
+      <div class="float">
+	<ul>
+	  <li>Ceci permet de déclarer une conversion implicite d'une séquence <span class="em">GenList</span> vers une sequence <span class="em">Set</span></li>
+	</ul>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h1>... Merci</h1>
+      <ul>
+
+	<li>Merci à Alex Gorbatchov
+	pour <a href="http://alexgorbatchev.com/SyntaxHighlighter">SyntaxHighlighter</a>.</li>
+
+	<li>Merci à Dean Wampler (Object Mentor) et Alex Payne (ex twitter) pour avoir publié
+	en <a href="http://creativecommons.org/licenses/by-nc/3.0/">licence ouverte</a> son
+	livre <a href="http://programming-scala.labs.oreilly.com/">Programming Scala</a></li>
+	
+	<li>Merci au w3c pour le format de présentation <a href="http://www.w3.org/Talks/Tools/Slidy2"></a>HTMLSlidy </li>
+      </ul>
+    </div>
+    
+  </body>
+</html>
