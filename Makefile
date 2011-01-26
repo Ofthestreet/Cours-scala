@@ -3,5 +3,3 @@ FILES=Scala.html scala.css shBrushScalaInteractive.js shBrushInteractiveShell.js
 TO=ftpperso.free.fr
 push:
 	ncftpput -u christophe.delarue1 -p 66689801 -m $(TO) $(TOP) $(FILES)
-mv:
-	mv $(FILES) Makefile Scala

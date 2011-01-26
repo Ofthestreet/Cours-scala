@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>object XPathLocationPathParser in scalaxx.parsing.path</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../../../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../../../script.js"></script>
+        </head>
+        <body onload="init()">
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">scalaxx -- Scala XML eXentsions library documentation</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table>
+        
+      <div class="entity">
+        <a href="../../../scalaxx/parsing/path$package.html" target="_self">scalaxx.parsing.path</a>
+        <br></br>
+        <span class="entity">object  XPathLocationPathParser</span>
+      </div><hr></hr>
+      <div class="source">
+        [source: <a href="" class="scalaxx/parsing/path/XPathLocationPathParser"><code>scalaxx/parsing/path/XPathLocationPathParser.scala</code></a>]
+      </div><hr></hr>
+      <a name="XPathLocationPathParser"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>object</code>
+        <em>XPathLocationPathParser</em>
+      </dt>
+      <dd><code> extends </code><a href="" target="contentFrame" class="scalaxx/parsing/path/Parser">scalaxx.parsing.path.Parser</a></dd>
+    </dl>
+      <dl><dd>This object provides a simple interface to the XPath1.0 parser class.
+
+ <dl>
+   <dt>Root</dt><dd>Constructor of XPath root expressions</dd>
+   <dt>Path</dt><dd>Constructor of XPath location expressions</dd>
+   <dt>Axis</dt><dd>Constructor of XPath axis expressions</dd>
+   <dt>*</dt><dd>Asterisk</dd>
+ </dl></dd></dl>
+      <dl><dt style="margin:10px 0 0 20px;">
+        <b>Author</b></dt><dd><a href="mailto:normen.mueller@googlemail.com">Normen M&#xFC;ller</a></dd><dt style="margin:10px 0 0 20px;">
+        <b>Version</b></dt><dd>0.0.3</dd></dl>
+    
+      
+
+<table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scalaxx/parsing/path/Parser">scalaxx.parsing.path.Parser</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#lexical" target="contentFrame" class="scalaxx/parsing/path/Parser">scalaxx.parsing.path.Parser.lexical</a>, <a href="#expr" target="contentFrame" class="scalaxx/parsing/path/Parser">scalaxx.parsing.path.Parser.expr</a>, <a href="#locPath" target="contentFrame" class="scalaxx/parsing/path/Parser">scalaxx.parsing.path.Parser.locPath</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Values and Variables inherited from <a href="" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#lastNoSuccess" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.lastNoSuccess</a>
+        </td></tr>
+      </table>
+<table summary="" cellpadding="3" class="member">
+      <tr><td class="title" colspan="2">Method Summary</td></tr>
+      <tr>
+      <td class="modifiers" valign="top"> 
+        <code> def</code>
+      </td>
+      <td class="signature">
+        <em><a href="../../../scalaxx/parsing/path/XPathLocationPathParser$object.html#parse%28String%29" target="_self">parse</a></em>
+        (<em>input</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>
+        
+        
+      </td>
+    </tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/util/parsing/combinator/ImplicitConversions">scala.util.parsing.combinator.ImplicitConversions</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#flatten2" target="contentFrame" class="scala/util/parsing/combinator/ImplicitConversions">scala.util.parsing.combinator.ImplicitConversions.flatten2</a>, <a href="#flatten3" target="contentFrame" class="scala/util/parsing/combinator/ImplicitConversions">scala.util.parsing.combinator.ImplicitConversions.flatten3</a>, <a href="#flatten4" target="contentFrame" class="scala/util/parsing/combinator/ImplicitConversions">scala.util.parsing.combinator.ImplicitConversions.flatten4</a>, <a href="#flatten5" target="contentFrame" class="scala/util/parsing/combinator/ImplicitConversions">scala.util.parsing.combinator.ImplicitConversions.flatten5</a>, <a href="#headOptionTailToFunList" target="contentFrame" class="scala/util/parsing/combinator/ImplicitConversions">scala.util.parsing.combinator.ImplicitConversions.headOptionTailToFunList</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/util/parsing/combinator/syntactical/StdTokenParsers">scala.util.parsing.combinator.syntactical.StdTokenParsers</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#keyword" target="contentFrame" class="scala/util/parsing/combinator/syntactical/StdTokenParsers">scala.util.parsing.combinator.syntactical.StdTokenParsers.keyword</a>, <a href="#numericLit" target="contentFrame" class="scala/util/parsing/combinator/syntactical/StdTokenParsers">scala.util.parsing.combinator.syntactical.StdTokenParsers.numericLit</a>, <a href="#stringLit" target="contentFrame" class="scala/util/parsing/combinator/syntactical/StdTokenParsers">scala.util.parsing.combinator.syntactical.StdTokenParsers.stringLit</a>, <a href="#ident" target="contentFrame" class="scala/util/parsing/combinator/syntactical/StdTokenParsers">scala.util.parsing.combinator.syntactical.StdTokenParsers.ident</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="#Parser" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.Parser</a>, <a href="#OnceParser" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.OnceParser</a>, <a href="#commit" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.commit</a>, <a href="#elem" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.elem</a>, <a href="#elem" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.elem</a>, <a href="#accept" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.accept</a>, <a href="#accept" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.accept</a>, <a href="#accept" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.accept</a>, <a href="#acceptIf" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.acceptIf</a>, <a href="#acceptMatch" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.acceptMatch</a>, <a href="#acceptSeq" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.acceptSeq</a>, <a href="#failure" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.failure</a>, <a href="#err" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.err</a>, <a href="#success" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.success</a>, <a href="#log" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.log</a>, <a href="#rep" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.rep</a>, <a href="#repsep" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.repsep</a>, <a href="#rep1" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.rep1</a>, <a href="#rep1" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.rep1</a>, <a href="#repN" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.repN</a>, <a href="#rep1sep" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.rep1sep</a>, <a href="#chainl1" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.chainl1</a>, <a href="#chainl1" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.chainl1</a>, <a href="#chainr1" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.chainr1</a>, <a href="#opt" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.opt</a>, <a href="#not" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.not</a>, <a href="#positioned" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.positioned</a>, <a href="#phrase" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.phrase</a>, <a href="#mkList" target="contentFrame" class="scala/util/parsing/combinator/Parsers">scala.util.parsing.combinator.Parsers.mkList</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#getClass%28%29" target="_self">getClass</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#hashCode%28%29" target="_self">hashCode</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#equals%28Any%29" target="_self">equals</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#clone%28%29" target="_self">clone</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#toString%28%29" target="_self">toString</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notify%28%29" target="_self">notify</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#notifyAll%28%29" target="_self">notifyAll</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28Long%2CInt%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#wait%28%29" target="_self">wait</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#finalize%28%29" target="_self">finalize</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%3D%3D%28AnyRef%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#%21%3D%28AnyRef%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#eq%28AnyRef%29" target="_self">eq</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#ne%28AnyRef%29" target="_self">ne</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html#synchronized%28T0%29" target="_self">synchronized</a>
+        </td></tr>
+      </table><table summary="" cellpadding="3" class="inherited">
+        <tr><td class="title" colspan="2">
+          Methods inherited from <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html" target="_self">Any</a>
+        </td></tr>
+        <tr><td class="signature" colspan="2">
+          <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%3D%3D%28Any%29" target="_self">==</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#%21%3D%28Any%29" target="_self">!=</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#isInstanceOf" target="_self">isInstanceOf</a>, <a href="http://www.scala-lang.org/docu/files/api/scala/Any.html#asInstanceOf" target="_self">asInstanceOf</a>
+        </td></tr>
+      </table>
+
+
+      
+
+
+<table summary="" cellpadding="3" class="member-detail">
+          <tr><td class="title">Method Details</td></tr>
+        </table><div><a name="parse%28String%29"></a><dl>
+      <dt>
+        
+        <code></code>
+        <code>def</code>
+        <em>parse</em>(<em>input</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) : <a href="../../../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>
+      </dt>
+      <dd></dd>
+    </dl><hr></hr></div>
+
+
+    <hr></hr>
+        <table summary="" class="navigation">
+        <tr>
+          <td class="navigation-links" valign="top">
+            <!-- <table><tr></tr></table> -->
+          </td>
+          <td align="right" valign="top" style="white-space:nowrap;" rowspan="2">
+            <div class="doctitle-larger">scalaxx -- Scala XML eXentsions library documentation</div>
+          </td>
+        </tr>
+        <tr><td></td></tr>
+      </table><div>Copyright 2009-2010 Normen Mueller. All Rights Reserved.</div>
+      </body>
+      </html>

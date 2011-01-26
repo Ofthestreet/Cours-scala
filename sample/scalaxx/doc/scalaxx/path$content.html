@@ -1,0 +1,661 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in scalaxx.path</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>scalaxx 0.0.3</div></div><p><div>This document is the API specification for scalaxx -- Scala XML eXentsions library documentation</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/$.html" target="_self">$</a></em>
+        (<code>val </code><em>v</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/And.html" target="_self">And</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Axis.html" target="_self">Axis</a></em>
+        (<code>val </code><em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>ident</em> : <a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a>, <code>val </code><em>attrs</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>])<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Binary.html" target="_self">Binary</a></em>
+        (<em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Div.html" target="_self">Div</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Equal.html" target="_self">Equal</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Expression.html" target="_self">Expression</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Filter.html" target="_self">Filter</a></em>
+        (<code>val </code><em>expr</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>attrs</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>])<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Fun.html" target="_self">Fun</a></em>
+        (<code>val </code><em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>args</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>])<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/GT.html" target="_self">GT</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/GTE.html" target="_self">GTE</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/LT.html" target="_self">LT</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/LTE.html" target="_self">LTE</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a></em>
+        <code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Minus.html" target="_self">Minus</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Mod.html" target="_self">Mod</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Mult.html" target="_self">Mult</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/NCName.html" target="_self">NCName</a></em>
+        (<code>val </code><em>local</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/NVal.html" target="_self">NVal</a></em>
+        (<code>val </code><em>v</em> : <a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>)<code> extends </code><a href="../scalaxx/path/Val.html" target="_self">Val</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Negative.html" target="_self">Negative</a></em>
+        (<code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Unary.html" target="_self">Unary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> trait</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Or.html" target="_self">Or</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Path.html" target="_self">Path</a></em>
+        (<code>val </code><em>steps</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>])<code> extends </code><a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Plus.html" target="_self">Plus</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/QName.html" target="_self">QName</a></em>
+        (<code>val </code><em>prefix</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <code>val </code><em>local</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Root.html" target="_self">Root</a></em>
+        (<code>val </code><em>steps</em> : <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>])<code> extends </code><a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/TVal.html" target="_self">TVal</a></em>
+        (<code>val </code><em>v</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../scalaxx/path/Val.html" target="_self">Val</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Type.html" target="_self">Type</a></em>
+        (<code>val override </code><em>name</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../scalaxx/path/Fun.html" target="_self">Fun</a><code> with </code><a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Unary.html" target="_self">Unary</a></em>
+        (<em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Unequal.html" target="_self">Unequal</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Union.html" target="_self">Union</a></em>
+        (<code>val </code><em>left</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <code>val </code><em>right</em> : <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>)<code> extends </code><a href="../scalaxx/path/Binary.html" target="_self">Binary</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Val.html" target="_self">Val</a></em>
+        <code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a>
+        
+        <div></div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/$$object.html" target="_self">$</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../scalaxx/path/$.html" target="_self">$</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/All$object.html" target="_self">All</a></em>
+        <code> extends </code><a href="../scalaxx/path/Expression.html" target="_self">Expression</a><code> with </code><a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/And$object.html" target="_self">And</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/And.html" target="_self">And</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Axis$object.html" target="_self">Axis</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="../scalaxx/path/NodeTest.html" target="_self">NodeTest</a>, <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>]) =&gt; <a href="../scalaxx/path/Axis.html" target="_self">Axis</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Div$object.html" target="_self">Div</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Div.html" target="_self">Div</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Equal$object.html" target="_self">Equal</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Equal.html" target="_self">Equal</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Filter$object.html" target="_self">Filter</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>]) =&gt; <a href="../scalaxx/path/Filter.html" target="_self">Filter</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Fun$object.html" target="_self">Fun</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>]) =&gt; <a href="../scalaxx/path/Fun.html" target="_self">Fun</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/GT$object.html" target="_self">GT</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/GT.html" target="_self">GT</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/GTE$object.html" target="_self">GTE</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/GTE.html" target="_self">GTE</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/LT$object.html" target="_self">LT</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/LT.html" target="_self">LT</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/LTE$object.html" target="_self">LTE</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/LTE.html" target="_self">LTE</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Minus$object.html" target="_self">Minus</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Minus.html" target="_self">Minus</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Mod$object.html" target="_self">Mod</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Mod.html" target="_self">Mod</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Mult$object.html" target="_self">Mult</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Mult.html" target="_self">Mult</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/NCName$object.html" target="_self">NCName</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../scalaxx/path/NCName.html" target="_self">NCName</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/NVal$object.html" target="_self">NVal</a></em>
+        <code> extends </code>(<a href="http://www.scala-lang.org/docu/files/api/scala/Double.html" target="_self">Double</a>) =&gt; <a href="../scalaxx/path/NVal.html" target="_self">NVal</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Negative$object.html" target="_self">Negative</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Negative.html" target="_self">Negative</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Or$object.html" target="_self">Or</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Or.html" target="_self">Or</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Path$object.html" target="_self">Path</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/List">scala.List</a>[<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>]) =&gt; <a href="../scalaxx/path/Path.html" target="_self">Path</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Plus$object.html" target="_self">Plus</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Plus.html" target="_self">Plus</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/QName$object.html" target="_self">QName</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>, <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../scalaxx/path/QName.html" target="_self">QName</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Root$object.html" target="_self">Root</a></em>
+        <code> extends </code><a href="../scalaxx/path/Root.html" target="_self">Root</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/TVal$object.html" target="_self">TVal</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../scalaxx/path/TVal.html" target="_self">TVal</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Type$object.html" target="_self">Type</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../scalaxx/path/Type.html" target="_self">Type</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Unequal$object.html" target="_self">Unequal</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Unequal.html" target="_self">Unequal</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/path/Union$object.html" target="_self">Union</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/Expression.html" target="_self">Expression</a>, <a href="../scalaxx/path/Expression.html" target="_self">Expression</a>) =&gt; <a href="../scalaxx/path/Union.html" target="_self">Union</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>

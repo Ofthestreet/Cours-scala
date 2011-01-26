@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+        <head><title>All classes and objects in scalaxx.diff</title>
+        <meta http-equiv="content-type" content="text/html; charset=UTF8"></meta><meta content="scaladoc (version 2.7.7.final)" name="generator"></meta><link href="../style.css" type="text/css" rel="stylesheet"></link><script type="text/javascript" src="../script.js"></script>
+        </head>
+        <body onload="init()"><div class="page-title"><div>scalaxx 0.0.3</div></div><p><div>This document is the API specification for scalaxx -- Scala XML eXentsions library documentation</div></p><table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Class Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/BaseEquivalenceSystem.html" target="_self">BaseEquivalenceSystem</a></em>
+        <code> extends </code><a href="" target="contentFrame" class="scaup/eq/EquivalenceSystem">scaup.eq.EquivalenceSystem</a>[<a href="" target="contentFrame" class="scala/xml/MetaData">scala.xml.MetaData</a>, <a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]
+        
+        <div>XML base equivalence system.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>sealed abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/Command.html" target="_self">Command</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Edit script commands following the example of XPath 1.0.
+ 
+  Note: At current state, command paths are restricted to XPath 1.0. location paths.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/EquivalenceSystem.html" target="_self">EquivalenceSystem</a></em>
+        (<em>spec</em> : <a href="" target="contentFrame" class="scaup/eq/EquivalenceSpecification">scaup.eq.EquivalenceSpecification</a>)<code> extends </code><a href="../scalaxx/diff/BaseEquivalenceSystem.html" target="_self">BaseEquivalenceSystem</a>
+        
+        <div>An XML equivalence system with respect to the parametrized equivalence specification.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>abstract class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/append.html" target="_self">append</a></em>
+        (<code>val </code><em>path</em> : <a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <code>val </code><em>instruction</em> : <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*)<code> extends </code><a href="../scalaxx/diff/Command.html" target="_self">Command</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/attr.html" target="_self">attr</a></em>
+        (<code>val </code><em>e</em> : <a href="" target="contentFrame" class="scala/xml/MetaData">scala.xml.MetaData</a>)<code> extends </code><a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/before.html" target="_self">before</a></em>
+        (<code>val </code><em>path</em> : <a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <code>val </code><em>instruction</em> : <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*)<code> extends </code><a href="../scalaxx/diff/Command.html" target="_self">Command</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/delta.html" target="_self">delta</a></em>
+        (<code>val </code><em>d</em> : <a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>)<code> extends </code><a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>@draft for fine granular change detection within XML text nodes</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/elem.html" target="_self">elem</a></em>
+        (<code>val </code><em>e</em> : <a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>])<code> extends </code><a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/patch.html" target="_self">patch</a></em>
+        (<code>val </code><em>path</em> : <a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <code>val </code><em>instruction</em> : <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*)<code> extends </code><a href="../scalaxx/diff/Command.html" target="_self">Command</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div>@draft for fine granular change detection within XML text nodes</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/remove.html" target="_self">remove</a></em>
+        (<code>val </code><em>path</em> : <a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <code>val </code><em>instruction</em> : <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*)<code> extends </code><a href="../scalaxx/diff/Command.html" target="_self">Command</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code>case class</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/update.html" target="_self">update</a></em>
+        (<code>val </code><em>path</em> : <a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <code>val </code><em>instruction</em> : <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*)<code> extends </code><a href="../scalaxx/diff/Command.html" target="_self">Command</a><code> with </code><a href="" target="contentFrame" class="scala/Product">scala.Product</a>
+        
+        <div></div>
+      </td>
+    </tr>        
+        </table>
+<table summary="" cellpadding="3" class="member">
+        <tr><td class="title" colspan="2">Object Summary</td></tr>
+        <tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/Differ$object.html" target="_self">Differ</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Companion to <code>Differ</code> class.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/EquivalenceSystem$object.html" target="_self">EquivalenceSystem</a></em>
+        <code> extends </code><a href="http://www.scala-lang.org/docu/files/api/scala/AnyRef.html" target="_self">AnyRef</a>
+        
+        <div>Companion to <code>EquivalenceSystem</code> class.</div>
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/append$object.html" target="_self">append</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*) =&gt; <a href="../scalaxx/diff/append.html" target="_self">append</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/attr$object.html" target="_self">attr</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/xml/MetaData">scala.xml.MetaData</a>) =&gt; <a href="../scalaxx/diff/attr.html" target="_self">attr</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/before$object.html" target="_self">before</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*) =&gt; <a href="../scalaxx/diff/before.html" target="_self">before</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/delta$object.html" target="_self">delta</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="java/lang/String">java.lang.String</a>) =&gt; <a href="../scalaxx/diff/delta.html" target="_self">delta</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/elem$object.html" target="_self">elem</a></em>
+        <code> extends </code>(<a href="" target="contentFrame" class="scala/Seq">scala.Seq</a>[<a href="" target="contentFrame" class="scala/xml/Node">scala.xml.Node</a>]) =&gt; <a href="../scalaxx/diff/elem.html" target="_self">elem</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/patch$object.html" target="_self">patch</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*) =&gt; <a href="../scalaxx/diff/patch.html" target="_self">patch</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/remove$object.html" target="_self">remove</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*) =&gt; <a href="../scalaxx/diff/remove.html" target="_self">remove</a>
+        
+        
+      </td>
+    </tr>
+<tr>
+      <td class="modifiers" valign="top"> 
+        <code> object</code>
+      </td>
+      <td class="signature">
+        <em><a href="../scalaxx/diff/update$object.html" target="_self">update</a></em>
+        <code> extends </code>(<a href="../scalaxx/path/LocationPath.html" target="_self">LocationPath</a>, <a href="../scalaxx/diff/Instruction.html" target="_self">Instruction</a>*) =&gt; <a href="../scalaxx/diff/update.html" target="_self">update</a>
+        
+        
+      </td>
+    </tr>        
+        </table></body>
+      </html>
